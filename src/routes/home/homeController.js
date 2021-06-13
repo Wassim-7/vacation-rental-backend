@@ -17,3 +17,8 @@ export async function getAll(req, res) {
   //send reponse
   return res.json(homesData)
 }
+
+export async function remove(req, res) {
+  await HomeModel.deleteOne({ _id: req.params.id })
+  return res.json({ success: true })
+}
