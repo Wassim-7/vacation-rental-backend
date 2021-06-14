@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 app.use(morgan('dev'))
 app.use('/', routes)
+app.use('/', express.static('public/uploads'));
 
 app.listen(3010, () => {
     console.log('server start listening at port 3010');

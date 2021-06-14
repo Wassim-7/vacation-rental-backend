@@ -5,6 +5,7 @@ const homeSchema = new mongoose.Schema({
   region: String,
   type: String,
   price: Number,
+  photos: [String],
   description: String
 })
 
