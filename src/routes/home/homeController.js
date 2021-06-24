@@ -22,3 +22,10 @@ export async function remove(req, res) {
   await HomeModel.deleteOne({ _id: req.params.id })
   return res.json({ success: true })
 }
+
+
+export async function update(req, res) {
+  await HomeModel.updateOne({ _id: req.params.id }, req.body)
+
+  return res.json({ success: true })
+}
