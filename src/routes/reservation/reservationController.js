@@ -22,3 +22,9 @@ export async function remove(req, res) {
   await ReservationModel.deleteOne({ _id: req.params.id })
   return res.json({ success: true })
 }
+
+export async function update(req, res) {
+  await ReservationModel.updateOne({ _id: req.params.id }, req.body)
+
+  return res.json({ success: true })
+}
