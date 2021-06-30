@@ -3,6 +3,11 @@ import ReservationModel from './reservation'
 export async function create(req, res) {
   let reservationData = req.body
 
+  let referance = 'R' + Math.floor(Math.random() * 9000 + 1000)
+
+  reservationData.payed = 'not payed'
+  reservationData.referance = referance
+
   //saving data to database
   reservationData = await ReservationModel.create(reservationData)
 
