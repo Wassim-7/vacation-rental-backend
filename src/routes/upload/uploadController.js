@@ -1,6 +1,7 @@
 import multer from 'multer'
 import path from 'path'
 import fs from 'fs'
+import { SERVER_URL } from '../../config/env'
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -30,7 +31,7 @@ export default async (req, res) => {
         return res.status(500).json(err)
       }
 
-      const fileUrls = req.files.map(file => 'http://localhost:3010/' + file.filename)
+      const fileUrls = req.files.map(file => SERVER_URL + file.filename)
 
       return res.json({ url: fileUrls[0] })
     } catch (err) {
