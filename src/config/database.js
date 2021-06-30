@@ -1,8 +1,7 @@
 import mongoose from 'mongoose'
+import { MONGODB_URI } from './env'
 
-const mongodbURI = 'mongodb://localhost:27017/vacationRental'
-
-mongoose.connect(mongodbURI, {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, (error) => {
